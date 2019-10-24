@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["JCSoft.MyServices/JCSoft.MyServices.csproj", ""]
+# COPY ["JCSoft.MyServices/JCSoft.MyServices.csproj", ""]
 RUN dotnet restore "./JCSoft.MyServices/JCSoft.MyServices.csproj"
 COPY . .
 WORKDIR "/src/."
