@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
 COPY . .
 # COPY ["JCSoft.MyServices/JCSoft.MyServices.csproj", ""]
-RUN dotnet restore "./JCSoft.MyServices/JCSoft.MyServices.csproj"
+RUN dotnet restore "JCSoft.MyServices/JCSoft.MyServices.csproj"
 
 WORKDIR "/src/."
 RUN dotnet build "JCSoft.MyServices/JCSoft.MyServices.csproj" -c Release -o /app
