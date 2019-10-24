@@ -8,9 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCSoft.MyServices.WebCore", "..\JCSoft.MyServices.WebCore\JCSoft.MyServices.WebCore.csproj", "{BF6FF7F8-4D76-48E9-8F41-E17D7CB70EF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{48CCF0ED-8A4E-4A63-9A50-39A1E60EA155}"
-	ProjectSection(SolutionItems) = preProject
-		..\Dockerfile = ..\Dockerfile
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
