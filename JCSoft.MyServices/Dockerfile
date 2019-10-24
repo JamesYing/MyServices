@@ -5,15 +5,15 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["JCSoft.MyServices.csproj", ""]
-COPY ["../JCSoft.MyServices.WebCore/JCSoft.MyServices.WebCore.csproj", "../JCSoft.MyServices.WebCore/"]
-RUN dotnet restore "./JCSoft.MyServices.csproj"
+COPY ["JCSoft.MyServices/JCSoft.MyServices.csproj", "JCSoft.MyServices/"]
+COPY ["JCSoft.MyServices.WebCore/JCSoft.MyServices.WebCore.csproj", "JCSoft.MyServices.WebCore/"]
+RUN dotnet restore "./JCSoft.MyServices/JCSoft.MyServices.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "JCSoft.MyServices.csproj" -c Release -o /app/build
+RUN dotnet build "JCSoft.MyServices/JCSoft.MyServices.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "JCSoft.MyServices.csproj" -c Release -o /app/publish
+RUN dotnet publish "JCSoft.MyServices/JCSoft.MyServices.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
