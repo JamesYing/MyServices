@@ -6,3 +6,5 @@
 /JCSoft.MyServices/.vs/JCSoft.MyServices/v16
 /JCSoft.MyServices/bin/Debug/netcoreapp2.2
 /JCSoft.MyServices/obj
+/JCSoft.MyServices.WebCore/bin/Debug/netstandard2.0
+/JCSoft.MyServices.WebCore/obj
