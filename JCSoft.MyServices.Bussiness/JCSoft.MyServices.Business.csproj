@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JCSoft.MyServices.Models\JCSoft.MyServices.Models.csproj" />
+    <ProjectReference Include="..\JCSoft.MyServices.Utils\JCSoft.MyServices.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

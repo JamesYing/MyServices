@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JCSoft.MyServices.Bussiness\JCSoft.MyServices.Business.csproj" />
+    <ProjectReference Include="..\JCSoft.MyServices.Utils\JCSoft.MyServices.Utils.csproj" />
     <ProjectReference Include="..\JCSoft.MyServices.WebCore\JCSoft.MyServices.WebCore.csproj" />
   </ItemGroup>
 

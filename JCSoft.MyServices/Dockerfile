@@ -5,17 +5,20 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["JCSoft.MyServices/JCSoft.MyServices.csproj", "JCSoft.MyServices/"]
-COPY ["JCSoft.MyServices.WebCore/JCSoft.MyServices.WebCore.csproj", "JCSoft.MyServices.WebCore/"]
-RUN dotnet restore "./JCSoft.MyServices/JCSoft.MyServices.csproj"
+COPY ["JCSoft.MyServices.csproj", ""]
+COPY ["../JCSoft.MyServices.WebCore/JCSoft.MyServices.WebCore.csproj", "../JCSoft.MyServices.WebCore/"]
+COPY ["../JCSoft.MyServices.Bussiness/JCSoft.MyServices.Business.csproj", "../JCSoft.MyServices.Bussiness/"]
+COPY ["../JCSoft.MyServices.Utils/JCSoft.MyServices.Utils.csproj", "../JCSoft.MyServices.Utils/"]
+COPY ["../JCSoft.MyServices.Models/JCSoft.MyServices.Models.csproj", "../JCSoft.MyServices.Models/"]
+RUN dotnet restore "./JCSoft.MyServices.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "JCSoft.MyServices/JCSoft.MyServices.csproj" -c Release -o /app/build
+RUN dotnet build "JCSoft.MyServices.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "JCSoft.MyServices/JCSoft.MyServices.csproj" -c Release -o /app/publish
+RUN dotnet publish "JCSoft.MyServices.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "JCSoft.MyServices.dll"]
